@@ -1,6 +1,9 @@
 
 Setup:  
 1.Instal anaconda python 2.7
-2. anaconda navigator -> enviorments -> Create new enviornmet called ADLC
-3. Download and use my enviornmet file $ conda env create -f environment.yml
-(I used spyder editor)
+
+2. In enviornments tab -> create new enviornment named ADLC
+
+3.in terminal: $ conda install -c menpo opencv3=3.1.0
+
+4. Run code (I used spyder editor)
