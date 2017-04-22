@@ -1,0 +1,41 @@
+# Fix ssl errors
+pyOpenSSL==16.0.0
+ndg-httpsclient==0.4.0
+
+# Common
+Cython==0.24
+numpy==1.8.2
+scipy==0.17.1
+
+# Caffe
+matplotlib==1.5.1
+ipython==4.2.0
+h5py==2.6.0
+leveldb==0.193
+networkx==1.11
+nose==1.3.7
+pandas==0.18.1
+python-dateutil==1.5
+protobuf==2.6.1
+python-gflags==3.0.5
+PyYAML==3.10
+Pillow==3.2.0
+six==1.10.0
+
+# ADDICT
+Flask==0.11.1
+httpie==0.9.3
+tornado==4.2
+Werkzeug==0.11.10
+redis==2.10.5
+SQLAlchemy==1.0.13
+pyzmq==15.2.0
+
+#Celery TODO(version)
+flower==0.9.1
+celery==3.1.23
+
+
+# Install scikit at the end
+scikit-image==0.12.3
+mahotas==1.4.1
