@@ -1,2 +1,2 @@
 
-Run in anaconda (I used spyder)
+Run in anaconda python 2.7 (I used spyder editor)
