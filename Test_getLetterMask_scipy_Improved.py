@@ -24,10 +24,10 @@ def innerMost(R, shape_colors_map, shape_indices):
 #################### Script start
 
 #@ Load image
-# imagePath = 'Images/manual_006_aa77fc74890d_crop.jpg'
-# imagePath = 'Images/Selection_002.png'
-# imagePath = 'Images/Crop2.jpg'
-imagePath = 'Images/manual_004_106160955a15_crop.jpg'
+#imagePath = 'Images/manual_007_40d11814c73d.jpg'
+#imagePath = 'Images/Selection_002.png'
+imagePath = 'Images/Crop2.jpg'
+#imagePath = 'Images/manual_004_106160955a15_crop.jpg'
 img = cv2.imread(imagePath)
 #@
 
@@ -35,7 +35,7 @@ img = cv2.imread(imagePath)
 width, height = img.shape[:2]
 
 ##@ Display image
-plt.imshow(img)
+plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB)) # flip RGB channels
 #@
 
 
@@ -46,9 +46,6 @@ colors, dist = spc.vq.kmeans(img_vectors, 2)
 color_map, _ = spc.vq.vq(img_vectors, colors)
 
 
-
-
-#
 # Calculate distance map.
 #
 X, Y = np.mgrid[:width, :height] 
