@@ -26,7 +26,9 @@ def GetLetterMask(img, plotFlag):
     
     if plotFlag:
         ##@ Display image
-        plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB)) # flip RGB channels
+        plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB)) # flip RGB channels because OpenCV loades in BGR fomat
+        plt.suptitle('Original image:')
+        plt.show()
  
     # Divide the crop to two colors. (expected to separate: shape and background)
     #
@@ -42,8 +44,8 @@ def GetLetterMask(img, plotFlag):
     
     if plotFlag:
         #@ Display shape mask
-        print 'Distance matrix'
         plt.matshow(R)
+        plt.suptitle('Distance matrix')
         plt.show()
     #
     # Assuming a tight crop the target should occupy most of the crop.
@@ -53,9 +55,11 @@ def GetLetterMask(img, plotFlag):
 
     if plotFlag:
         #@ Display separation
-        print 'k-means with k=2 by colors:'
         plt.matshow(color_map.reshape(width, height) == shape_index)
+        plt.suptitle('k-means with k=2 by colors:')
         plt.show()
+
+
 
     # Smooth the map to remove noise.
     # Erode it to remove the border of the shape the might damage the segmentation to shape and letter.
@@ -69,8 +73,8 @@ def GetLetterMask(img, plotFlag):
     
     if plotFlag:
         #@ Display shape mask
-        print 'shape mask - after smooth and erode  (remove border):'
         plt.matshow(shape_mask)
+        plt.suptitle('shape mask - after smooth and erode  (remove border):')
         plt.show()
     
     #
@@ -80,8 +84,8 @@ def GetLetterMask(img, plotFlag):
     
     if plotFlag:
         #@ Display shape mask
-        print 'shape mask - after filling holes:'
         plt.matshow(shape_mask)
+        plt.suptitle('shape mask - after filling holes:')
         plt.show()
 
     #
@@ -113,8 +117,8 @@ def GetLetterMask(img, plotFlag):
     
     if plotFlag:
         #@ Display letter mask
-        print 'Raw Letter mask (before connected componrnnets separate):'
         plt.matshow(rawLetterMask)
+        plt.suptitle('Raw Letter mask (before connected componrnnets separate):')
         plt.show()
     
     
@@ -154,8 +158,8 @@ if __name__ == '__main__':
     letter_mask = GetLetterMask(img, plotFlag)
     
     #@ Display letter mask
-    print 'Final letter mask'
     plt.matshow(letter_mask)
+    plt.suptitle('Final letter mask')
     plt.show()
     #@
 
